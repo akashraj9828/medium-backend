@@ -6,15 +6,29 @@ const RegisterSchema = Schema({
     type: String,
     require: true,
   },
-
   email: {
     type: String,
     require: true,
   },
 
   password: {
-    type: Number,
+    type: String,
     require: true,
+  },
+
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    },
+  ],
+
+  followers: {
+    type: Array,
+  },
+
+  following: {
+    type: Array,
   },
 });
 
